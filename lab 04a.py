@@ -6,6 +6,7 @@ from dash import html, dcc, Input, Output
 # use same gapminderDataFiveYear.csv as lab 03
 
 app = dash.Dash(__name__)
+server = app.server   # expose Flask server for Vercel
 
 # prepare data
 df = pd.read_csv("gapminderDataFiveYear.csv")
@@ -37,4 +38,4 @@ def update_graph(selected_year):
 
 # execute program
 if __name__ == '__main__':
-    app.run(debug=True, port=8050)
+    app.run(debug=True)
